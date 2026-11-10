@@ -525,7 +525,8 @@ dialog .pill {
             transparent 100%
     );
 }
-@media (min-width:1024px) and (max-width:1400px) {
+/* 데스크톱 전체: 1024px 이상 */
+@media (min-width: 1024px) {
 
     /* 1. 정주필 */
     .speaker-photo img[src*="speaker-jung"] {
@@ -534,7 +535,7 @@ dialog .pill {
 
     /* 2. 강병준 */
     .speaker-photo img[src*="speaker-kang"] {
-        transform: translateY(35px) scale(1.6);
+        transform: translateY(40px) scale(1.6);
     }
 
     /* 3. 민병덕 */
@@ -551,6 +552,9 @@ dialog .pill {
     .speaker-photo img[src*="speaker-jeong"] {
         transform: scale(1.1) translateY(12px);
     }
+}
+@media (min-width:1024px) and (max-width:1400px) {
+
 
     .header-inner {
         width: calc(100% - 80px);
