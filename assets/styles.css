@@ -1012,3 +1012,141 @@ dialog .pill {
         transition: none !important;
     }
 }
+
+
+/* =========================================
+   시안 디자인 보정
+   ========================================= */
+
+/* 1. 2026 텍스트 그라데이션 */
+.year {
+    width: fit-content;
+    color: #a1e8ff;
+    background: linear-gradient(
+            90deg,
+            #f0fbff 0%,
+            #a1e8ff 45%,
+            #4dc8f5 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 2. 메인 타이틀 x 그라데이션 */
+.hero h1.wordmark span {
+    color: #00b9ed;
+    background: linear-gradient(
+            135deg,
+            #00d5ff 0%,
+            #0085cc 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 3. MAIN STAGE 텍스트 그라데이션 */
+.stage-summary h2 {
+    width: fit-content;
+    color: #fff;
+    background: linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #e2f5ff 55%,
+            #8ccae8 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 4. 스테이지 배경 밝기 및 이미지 합성 */
+.stage {
+    position: relative;
+    isolation: isolate;
+    background:
+            url("assets/stage-light.webp")
+            center / cover no-repeat;
+}
+
+.stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+            url("assets/stage-crowd.webp")
+            center bottom / cover no-repeat;
+    mix-blend-mode: normal;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* 5. 세로 구분선과 가로 구분선 연결 */
+@media (min-width: 1024px) {
+    .stage-features {
+        padding-left: 52px;
+        border-left: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .stage-features article + article {
+        position: relative;
+        border-top: 0;
+    }
+
+    .stage-features article + article::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -52px;
+        right: 0;
+        height: 1px;
+        background: rgba(255,255,255,0.35);
+    }
+}
+
+/* 6. 01, 02 숫자 디자인 */
+.stage-features h3 span {
+    display: inline-block;
+    margin-right: 9px;
+    color: #ff9b00;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    line-height: 1;
+}
+
+/* 7. 날짜 영역의 세로 그라데이션 라인 */
+.event-dates {
+    position: relative;
+    border-left: 0;
+}
+
+.event-dates::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: linear-gradient(
+            180deg,
+            #00cfff 0%,
+            #326a9a 45%,
+            #25374c 100%
+    );
+}
+
+/* 8. 모바일에서 기존 구분선 숨김 유지 */
+@media (max-width: 1023px) {
+    .stage-features {
+        border-left: 0;
+    }
+
+    .stage-features article + article::before {
+        display: none;
+    }
+}
+
