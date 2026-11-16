@@ -1524,3 +1524,52 @@ dialog .pill {
         flex-direction: column;
     }
 }
+
+
+/* PC에서는 기존 한 줄 유지 */
+.hero-title-first,
+.hero-title-second {
+    display: inline;
+}
+
+/* 모바일에서만 두 줄 */
+@media (max-width: 1023px) {
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 54px);
+        line-height: 1.3;
+        letter-spacing: -0.055em;
+        white-space: normal;
+        transform: none;
+        max-width: 100%;
+    }
+
+    .hero-title-first,
+    .hero-title-second {
+        display: block;
+        width: fit-content;
+        white-space: nowrap;
+    }
+}
+
+/* 메인 타이틀 AI, SOFTWAVE는 흰색 유지 */
+.hero h1.wordmark .hero-title-first,
+.hero h1.wordmark .hero-title-second {
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: #fff;
+}
+
+/* x에만 파란색 그라데이션 */
+.hero h1.wordmark .hero-title-first > span {
+    color: #00b9ed;
+    background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #e7f9ff 35%,
+            #00b9ed 55%,
+            #0086c8 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
