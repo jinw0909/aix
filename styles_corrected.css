@@ -9,7 +9,8 @@ body {
     margin: 0;
     background: #000;
     color: #fff;
-    font-family: Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    font-family: "Pretendard", "Noto Sans KR",
+    "Apple SD Gothic Neo", Arial, sans-serif;
     line-height: 1.5;
 }
 body.menu-open {
@@ -37,21 +38,72 @@ button:focus-visible,a:focus-visible,summary:focus-visible {
 [hidden] {
     display: none !important;
 }
+/* =====================================
+   Global scrollbar
+===================================== */
+
+:root {
+    --scrollbar-track: #030506;
+    --scrollbar-gradient: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #e7f9ff 45%,
+            #00b9ed 65%,
+            #0086c8 100%
+    );
+    --scrollbar-thumb: #00b9ed;
+}
+
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar {
+    width: 9px;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb {
+    border: 2px solid var(--scrollbar-track);
+    border-radius: 999px;
+    background: var(--scrollbar-gradient);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #b9edff 35%,
+            #00c8ff 65%,
+            #0078b8 100%
+    );
+}
+.michroma-regular {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 .container {
     width: min(1200px,calc(100% - 80px));
     margin: auto;
 }
-.wordmark {
-    font-family: Arial,sans-serif;
-    font-weight: 500;
-    letter-spacing: -.055em;
-    line-height: 1.1;
-}
+/*.wordmark {*/
+/*    font-family: Arial,sans-serif;*/
+/*    font-weight: 500;*/
+/*    letter-spacing: -.055em;*/
+/*    line-height: 1.1;*/
+/*}*/
 .wordmark span {
     color: #00b9ed;
 }
 .header {
-    height: 72px;
+    height: 74px;
     position: sticky;
     top: 0;
     background: linear-gradient(110deg,#063558,#000 75%);
@@ -59,7 +111,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible {
     border-bottom: 1px solid #ffffff10;
 }
 .header-inner {
-    max-width: 1200px;
+    width: calc(100% - 200px);
+    max-width: none;
     margin: auto;
     height: 100%;
     display: flex;
@@ -70,21 +123,34 @@ button:focus-visible,a:focus-visible,summary:focus-visible {
     display: flex;
     align-items: center;
 }
+/*.brand img {*/
+/*    width: 175px;*/
+/*    height: 41px;*/
+/*    object-fit: contain;*/
+/*}*/
 .brand img {
-    width: 175px;
-    height: 41px;
+    width: 202px;
+    height: 32px;
     object-fit: contain;
 }
+/*.desktop-nav {*/
+/*    display: flex;*/
+/*    gap: 48px;*/
+/*    font-size: 14px;*/
+/*}*/
 .desktop-nav {
     display: flex;
-    gap: 48px;
-    font-size: 14px;
+    gap: 56px;
+    font-family: "Michroma", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #A1B4C9;
 }
 .desktop-nav a:hover,.desktop-nav a[aria-current] {
     color: #00c6ff;
 }
 .header-title {
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 700;
 }
 .menu-toggle {
@@ -100,7 +166,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible {
     content: "";
     position: absolute;
     inset: 0;
-    background: url("assets/hero.webp") right top/auto 100% no-repeat;
+    background: url("assets/hero.png") right top/auto 100% no-repeat;
     pointer-events: none;
 }
 .hero-inner {
@@ -121,8 +187,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible {
     font-size: 90px;
     white-space: nowrap;
     margin-top: 7px;
-    letter-spacing: -.068em;
-    transform: scaleX(1.03);
+    /*letter-spacing: -.068em;*/
+    /*transform: scaleX(1.03);*/
     transform-origin: left;
 }
 .hero-subtitle {
@@ -310,7 +376,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible {
     display: inline-block;
     margin-right: 10px;
 
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Michroma', sans-serif;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: -1px;
@@ -705,6 +771,7 @@ dialog .pill {
         background: #000;
     }
     .header-inner {
+        width: 100%;
         padding: 0 24px;
     }
     .brand img {
@@ -781,9 +848,9 @@ dialog .pill {
     }
     .hero h1 {
         font-size: 36px;
-        letter-spacing: -2.2px;
+        /*letter-spacing: -2.2px;*/
         margin-top: 0;
-        transform: scaleX(1.04);
+        /*transform: scaleX(1.04);*/
     }
     .hero-subtitle {
         font-size: 16px;
@@ -1303,4 +1370,141 @@ dialog .pill {
     background-size: 100% 45%;
     background-position: left bottom;
     background-repeat: no-repeat;
+}
+
+/* =====================================
+   Shared Footer - DAKS / AI x SOFTWAVE
+===================================== */
+
+.site-footer {
+    border-top: 1px solid #575d66;
+    padding: 70px 0 48px;
+    /*background: #282828;*/
+    color: #f7f7f7;
+    font-family: Pretendard, sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+
+.site-footer .container {
+    width: min(1200px, calc(100% - 48px));
+    max-width: none;
+    margin: 0 auto;
+}
+
+.site-footer .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.site-footer .brand {
+    flex: 0 0 auto;
+}
+
+.site-footer .brand img {
+    display: block;
+    width: auto;
+    /*max-width: 202px;*/
+    /*height: auto;*/
+}
+
+.site-footer .company-info {
+    color: #dee2e8;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -.28px;
+}
+
+.site-footer .company-info p {
+    margin: 0 0 4px;
+}
+
+.site-footer .company-info strong {
+    font-weight: 700;
+}
+
+.site-footer .company-info span {
+    margin: 0 10px;
+    opacity: .4;
+}
+
+.site-footer .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 0 0 auto;
+}
+
+.site-footer .social-icons img {
+    display: block;
+    max-width: 36px;
+    max-height: 36px;
+    filter: invert(100%);
+}
+
+.site-footer .copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding-top: 28px;
+    color: #c4c4c4;
+}
+
+.site-footer .copyright p {
+    margin: 0;
+}
+
+.site-footer .footer-policy-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.site-footer .footer-policy-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-footer .footer-policy-links a:hover {
+    text-decoration: underline;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .site-footer .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 48px 0 32px;
+    }
+
+    .site-footer .container {
+        width: calc(100% - 32px);
+    }
+
+    .site-footer .footer-inner {
+        gap: 22px;
+    }
+
+    .site-footer .company-info span {
+        margin: 0 5px;
+    }
+
+    .site-footer .copyright {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
