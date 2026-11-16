@@ -146,8 +146,24 @@ html::-webkit-scrollbar-thumb:hover {
     font-weight: 500;
     color: #A1B4C9;
 }
-.desktop-nav a:hover,.desktop-nav a[aria-current] {
-    color: #00c6ff;
+/*.desktop-nav a:hover,.desktop-nav a[aria-current] {*/
+/*    color: #00c6ff;*/
+/*}*/
+/* DAKS와 동일한 네비게이션 Hover 효과 */
+@media (hover: hover) and (pointer: fine) {
+    .desktop-nav a {
+        display: inline-block;
+        color: #A1B4C9;
+        transition:
+                color 180ms ease,
+                transform 180ms ease;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a:focus-visible {
+        color: #dceaf6;
+        transform: translateY(-2px);
+    }
 }
 .header-title {
     font-size: 18px;

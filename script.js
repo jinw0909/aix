@@ -51,13 +51,13 @@ document.querySelector('.map-link').addEventListener('click', () => {
   document.querySelector('#venue-map').scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
 });
 
-const sectionObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    document.querySelectorAll('.desktop-nav a').forEach(link => {
-      if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
-  });
-}, { rootMargin: '-15% 0px -65% 0px' });
-document.querySelectorAll('#about, #speaker, #tickets, #faq').forEach(section => sectionObserver.observe(section));
+// const sectionObserver = new IntersectionObserver(entries => {
+//   entries.forEach(entry => {
+//     if (!entry.isIntersecting) return;
+//     document.querySelectorAll('.desktop-nav a').forEach(link => {
+//       if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+//       else link.removeAttribute('aria-current');
+//     });
+//   });
+// }, { rootMargin: '-15% 0px -65% 0px' });
+// document.querySelectorAll('#about, #speaker, #tickets, #faq').forEach(section => sectionObserver.observe(section));
