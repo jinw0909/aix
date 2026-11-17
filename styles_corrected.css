@@ -1573,3 +1573,31 @@ dialog .pill {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.host-logos a,
+.sponsor-logos a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+    .host-logos a {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .host-logos a img {
+        width: 100%;
+    }
+
+    .sponsor-logos a {
+        flex: 0 1 calc((100% - 32px) / 3);
+        min-width: 0;
+    }
+
+    .sponsor-logos a img {
+        max-width: 100%;
+    }
+}
