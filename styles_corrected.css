@@ -1601,3 +1601,20 @@ dialog .pill {
         max-width: 100%;
     }
 }
+
+.header-title,
+.mobile-menu .mobile-menu-title,
+.mobile-menu > a {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+}
+
+.mobile-menu .mobile-menu-title {
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+}
+
+.mobile-menu > a {
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
